@@ -44,7 +44,7 @@ struct ProductItemView: View {
                                 .background(Color.primaryApp)
                                 .cornerRadius(10)
                                 .padding(.top)
-                                .padding(.leading, 30)
+                                .padding(.leading, 45)
                                 
                             }
                         }

@@ -41,6 +41,12 @@
 		3F25CF312D5CC79700D3C4C1 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CF302D5CC79700D3C4C1 /* OrdersView.swift */; };
 		3F47B4A42D6745CB001D03F2 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4A32D6745CB001D03F2 /* Favorites.swift */; };
 		3F47B4A82D674610001D03F2 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4A72D674610001D03F2 /* FavoritesViewModel.swift */; };
+		3F47B4AB2D676B32001D03F2 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4AA2D676B32001D03F2 /* Fruits.swift */; };
+		3F47B4AD2D676B40001D03F2 /* Eggs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4AC2D676B40001D03F2 /* Eggs.swift */; };
+		3F47B4AF2D676B66001D03F2 /* Beverages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4AE2D676B66001D03F2 /* Beverages.swift */; };
+		3F47B4B12D676B74001D03F2 /* Bakery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4B02D676B74001D03F2 /* Bakery.swift */; };
+		3F47B4B32D676B85001D03F2 /* Meat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4B22D676B85001D03F2 /* Meat.swift */; };
+		3F47B4B52D676B9F001D03F2 /* CookingOil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4B42D676B9F001D03F2 /* CookingOil.swift */; };
 		3FCC1CB62D672D2D00D9CDAF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC1CB52D672D2D00D9CDAF /* Product.swift */; };
 		AFA6204C2D311F350018E268 /* FoodDeliveryMaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6204B2D311F350018E268 /* FoodDeliveryMaxApp.swift */; };
 		AFA620502D311F370018E268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA6204F2D311F370018E268 /* Assets.xcassets */; };
@@ -108,6 +114,12 @@
 		3F25CF302D5CC79700D3C4C1 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
 		3F47B4A32D6745CB001D03F2 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		3F47B4A72D674610001D03F2 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		3F47B4AA2D676B32001D03F2 /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
+		3F47B4AC2D676B40001D03F2 /* Eggs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eggs.swift; sourceTree = "<group>"; };
+		3F47B4AE2D676B66001D03F2 /* Beverages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beverages.swift; sourceTree = "<group>"; };
+		3F47B4B02D676B74001D03F2 /* Bakery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bakery.swift; sourceTree = "<group>"; };
+		3F47B4B22D676B85001D03F2 /* Meat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meat.swift; sourceTree = "<group>"; };
+		3F47B4B42D676B9F001D03F2 /* CookingOil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingOil.swift; sourceTree = "<group>"; };
 		3FCC1CB52D672D2D00D9CDAF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		AFA620482D311F350018E268 /* FoodDeliveryMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDeliveryMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA6204B2D311F350018E268 /* FoodDeliveryMaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDeliveryMaxApp.swift; sourceTree = "<group>"; };
@@ -241,6 +253,19 @@
 			path = Favourite;
 			sourceTree = "<group>";
 		};
+		3F47B4A92D676AF3001D03F2 /* ExplorePage */ = {
+			isa = PBXGroup;
+			children = (
+				3F47B4AA2D676B32001D03F2 /* Fruits.swift */,
+				3F47B4AC2D676B40001D03F2 /* Eggs.swift */,
+				3F47B4AE2D676B66001D03F2 /* Beverages.swift */,
+				3F47B4B02D676B74001D03F2 /* Bakery.swift */,
+				3F47B4B22D676B85001D03F2 /* Meat.swift */,
+				3F47B4B42D676B9F001D03F2 /* CookingOil.swift */,
+			);
+			path = ExplorePage;
+			sourceTree = "<group>";
+		};
 		AFA6203F2D311F350018E268 = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +341,7 @@
 		AFA6207F2D3128D00018E268 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F47B4A92D676AF3001D03F2 /* ExplorePage */,
 				3FBB42D72D5DF2A100855752 /* Products */,
 				3E7D7E1A2D53941B003658CB /* Home */,
 				3E951C562D5643B2006A6942 /* MainTab */,
@@ -507,22 +533,28 @@
 				3F47B4A42D6745CB001D03F2 /* Favorites.swift in Sources */,
 				3EC0E3FF2D411D24007144DE /* LineTextField.swift in Sources */,
 				3E951C5E2D564481006A6942 /* FavouriteView.swift in Sources */,
+				3F47B4B12D676B74001D03F2 /* Bakery.swift in Sources */,
 				3F25CF2F2D5CBAF400D3C4C1 /* AccountOption.swift in Sources */,
 				3E431B792D43AE18002829F8 /* Globs.swift in Sources */,
+				3F47B4AF2D676B66001D03F2 /* Beverages.swift in Sources */,
 				3E951C602D564499006A6942 /* ExploreView.swift in Sources */,
 				3E7D7E1C2D53942B003658CB /* HomeView.swift in Sources */,
 				3E951C582D5643D3006A6942 /* MainTabView.swift in Sources */,
 				3E431B922D43B05E002829F8 /* UIKitExtension.swift in Sources */,
+				3F47B4B32D676B85001D03F2 /* Meat.swift in Sources */,
 				3E392E862D3FCF3A0000EFA2 /* LogInView.swift in Sources */,
 				3E951C662D56476B006A6942 /* CategoryButton.swift in Sources */,
 				3F47B4A82D674610001D03F2 /* FavoritesViewModel.swift in Sources */,
 				3E431B6C2D43AD63002829F8 /* HomeViewModel.swift in Sources */,
 				3E431B7B2D43AE18002829F8 /* BackButton.swift in Sources */,
+				3F47B4B52D676B9F001D03F2 /* CookingOil.swift in Sources */,
 				3E431B892D43AE91002829F8 /* ProductModel.swift in Sources */,
 				AFA620892D312C260018E268 /* UIExtension.swift in Sources */,
 				AFA6208B2D313E4D0018E268 /* SignInView.swift in Sources */,
 				3E431B8B2D43AE91002829F8 /* UserModel.swift in Sources */,
 				3F25CF312D5CC79700D3C4C1 /* OrdersView.swift in Sources */,
+				3F47B4AD2D676B40001D03F2 /* Eggs.swift in Sources */,
+				3F47B4AB2D676B32001D03F2 /* Fruits.swift in Sources */,
 				3E392E882D3FCF4A0000EFA2 /* SignUpView.swift in Sources */,
 				3F1251992D3FBF5B0041E677 /* Country.swift in Sources */,
 				3E431B8A2D43AE91002829F8 /* ImageModel.swift in Sources */,

@@ -75,7 +75,7 @@ struct LogInView: View {
                 .padding(.bottom, 20)
                 
                 NavigationLink{
-                    HomeView()
+                    MainTabView()
                 }label: {
                     Text("Log In")
                         .font(.customfont(.semibold, fontSize: 18))

@@ -24,7 +24,16 @@ struct FavoritesView: View {
                     }
                 }
             }
-            .navigationTitle("Favorites")
+            
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Favorites")
+                        .font(.customfont(.semibold, fontSize: 30)) // Use a custom font here
+                  // Change the color if needed
+                }
+            }
+
+            
         }
     }
 }
