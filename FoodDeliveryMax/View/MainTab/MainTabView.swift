@@ -3,7 +3,6 @@ import SwiftUI
 struct MainTabView: View {
     
     @StateObject var homeVM = HomeViewModel.shared
-    @EnvironmentObject var favoritesManager: FavoritesManager
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -14,7 +13,7 @@ struct MainTabView: View {
                     .tag(1)
                 MyCartView()
                     .tag(2)
-                FavoritesView()
+                FavoritesView(favoritesViewModel: FavoritesViewModel.shared)
                     .tag(3)
                 AccountView()
                     .tag(4)
@@ -62,8 +61,8 @@ struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             MainTabView()
-                .environmentObject(CityViewModel())
-                .environmentObject(FavoritesManager())  // Ensure FavoritesManager is passed here
+               
+              
         }
     }
 }

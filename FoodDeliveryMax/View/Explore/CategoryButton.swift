@@ -10,6 +10,7 @@ struct CategoryCard: View {
         RoundedRectangle(cornerRadius: 15)
             .stroke(borderColor, lineWidth: 0.8)
             .background(backgroundColor)
+            .cornerRadius(15)
             .frame(width: 165, height: 175)
             .overlay(
                 VStack {
@@ -34,7 +35,7 @@ struct CategoryCard_Previews: PreviewProvider {
                      text: "Fresh Fruits & Vegetables")
         .previewLayout(.sizeThatFits)
         .padding()
-        .environmentObject(FavoritesManager())
+       
     }
 
 }

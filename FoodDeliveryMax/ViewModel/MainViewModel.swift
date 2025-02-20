@@ -2,7 +2,7 @@ import SwiftUI
 
 class MainViewModel: ObservableObject {
     static var shared: MainViewModel = MainViewModel()
-    @EnvironmentObject var favoritesManager: FavoritesManager
+   
     
     @Published var txtUsername: String = ""
     @Published var txtEmail: String = ""

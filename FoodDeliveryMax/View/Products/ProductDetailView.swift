@@ -1,25 +1,22 @@
 import SwiftUI
 
-struct ProductDetailView: View {
-    @EnvironmentObject var favoritesManager: FavoritesManager // Inject the favorites manager
-    @State private var quantity: Int = 1
-    @State private var isFavorited: Bool = false // Track if the product is in favorites
+import SwiftUI
 
-    // Receive the entire product object
+struct ProductDetailView: View {
+    @State private var quantity: Int = 1
     var product: Product
 
     var body: some View {
         ScrollView {
             VStack {
-                // Product Image with Blur Effect Inside a Rectangle
                 ZStack {
                     Rectangle()
                         .fill(Color.gray.opacity(0.1))
                         .frame(width: 350, height: 350)
                         .cornerRadius(20)
-                        .blur(radius: 10) // Apply the blur effect
+                        .blur(radius: 10)
 
-                    Image(product.image) // Use dynamic product image
+                    Image(product.image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 350, height: 350)
@@ -27,30 +24,14 @@ struct ProductDetailView: View {
                         .padding()
                 }
 
-                // Product Info
                 VStack {
                     HStack {
-                        Text(product.name) // Use dynamic product name
+                        Text(product.name)
                             .font(.customfont(.bold, fontSize: 30))
-                       
                         Spacer()
-                        
-                        Button(action: {
-                            // Toggle favorite state
-                            if isFavorited {
-                                favoritesManager.removeFromFavorites(product: product) // Remove from favorites
-                            } else {
-                                favoritesManager.addToFavorites(product: product) // Add to favorites
-                            }
-                            isFavorited.toggle() // Toggle the state
-                        }) {
-                            Image(systemName: isFavorited ? "heart.fill" : "heart") // Change heart icon based on state
-                                .font(.title)
-                                .foregroundColor(isFavorited ? .red : .gray) // Change color based on state
-                        }
                     }
-                    
-                    Text(product.description) // You can customize this or use another property
+
+                    Text(product.description)
                         .font(.customfont(.semibold, fontSize: 17))
                         .foregroundColor(.gray)
 
@@ -74,12 +55,12 @@ struct ProductDetailView: View {
                             }
                         }
                         Spacer()
-                        Text(product.price) // Use dynamic price from product
+                        Text(product.price)
                             .font(.customfont(.semibold, fontSize: 27))
                             .fontWeight(.bold)
                     }
                 }
-                .padding(.horizontal, 24) // Match horizontal padding
+                .padding(.horizontal, 24)
 
                 // Product Details Section
                 VStack {
@@ -90,7 +71,7 @@ struct ProductDetailView: View {
                         Spacer()
                         Image(systemName: "chevron.down")
                     }
-                    Text(product.pdescription) // Use dynamic product pdescription
+                    Text(product.pdescription)
                         .font(.customfont(.regular, fontSize: 17))
                         .foregroundColor(.gray)
                     Divider()
@@ -99,7 +80,7 @@ struct ProductDetailView: View {
                         Text("Nutritions")
                             .font(.customfont(.semibold, fontSize: 17))
                         Spacer()
-                        Text("100gr") // You can make this dynamic if needed
+                        Text("100gr")
                             .foregroundColor(.gray)
                         Image(systemName: "chevron.right")
                     }
@@ -118,10 +99,9 @@ struct ProductDetailView: View {
                         Image(systemName: "chevron.right")
                     }
                 }
-                .padding(.horizontal, 24) // Match horizontal padding
-                .padding(.vertical, 25) // Adjusted vertical padding
+                .padding(.horizontal, 24)
+                .padding(.vertical, 25)
 
-                // Add to Basket Button
                 Button(action: {}) {
                     Text("Add To Basket")
                         .font(.customfont(.bold, fontSize: 20))
@@ -131,26 +111,20 @@ struct ProductDetailView: View {
                         .background(Color.primaryApp)
                         .cornerRadius(10)
                 }
-                .padding(.horizontal, 20) // Match horizontal padding
-                .padding(.bottom, 5) // Adjusted bottom padding
+                .padding(.horizontal, 20)
+                .padding(.bottom, 5)
             }
             .cornerRadius(20)
-            .padding(.horizontal, 20) // Match horizontal padding
-            .padding(.bottom, 20) // Adjusted bottom padding
+            .padding(.horizontal, 20)
+            .padding(.bottom, 20)
         }
-        .padding(.top, 50) // Match top padding
+        .padding(.top, 50)
         .ignoresSafeArea(.all)
-        .onAppear {
-            // Check if the product is already favorited
-            isFavorited = favoritesManager.favorites.contains { $0.id == product.id }
-        }
     }
 }
-
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack{
-            let favoritesManager = FavoritesManager()
+        NavigationStack {
             ProductDetailView(
                 product: Product(
                     id: UUID(),
@@ -161,7 +135,6 @@ struct ProductDetailView_Previews: PreviewProvider {
                     pdescription: "Banana is very good for health" // This will be displayed in the product detail
                 )
             )
-            .environmentObject(FavoritesManager()) // Inject the FavoritesManager
         }
     }
 }

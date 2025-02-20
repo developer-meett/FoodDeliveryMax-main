@@ -74,8 +74,8 @@ struct LogInView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
                 .padding(.bottom, 20)
                 
-                Button{
-                    loginVM.serviceCallLogin()
+                NavigationLink{
+                    HomeView()
                 }label: {
                     Text("Log In")
                         .font(.customfont(.semibold, fontSize: 18))
