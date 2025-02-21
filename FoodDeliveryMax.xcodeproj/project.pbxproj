@@ -47,6 +47,9 @@
 		3F47B4B12D676B74001D03F2 /* Bakery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4B02D676B74001D03F2 /* Bakery.swift */; };
 		3F47B4B32D676B85001D03F2 /* Meat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4B22D676B85001D03F2 /* Meat.swift */; };
 		3F47B4B52D676B9F001D03F2 /* CookingOil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4B42D676B9F001D03F2 /* CookingOil.swift */; };
+		3FC071672D68425400D35843 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC071662D68425400D35843 /* FilterView.swift */; };
+		3FC0716D2D68664F00D35843 /* appiconn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC0716C2D68664F00D35843 /* appiconn.png */; };
+		3FC071752D687F8800D35843 /* Bannertoptest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC071742D687F8800D35843 /* Bannertoptest.swift */; };
 		3FCC1CB62D672D2D00D9CDAF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC1CB52D672D2D00D9CDAF /* Product.swift */; };
 		AFA6204C2D311F350018E268 /* FoodDeliveryMaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6204B2D311F350018E268 /* FoodDeliveryMaxApp.swift */; };
 		AFA620502D311F370018E268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA6204F2D311F370018E268 /* Assets.xcassets */; };
@@ -120,6 +123,9 @@
 		3F47B4B02D676B74001D03F2 /* Bakery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bakery.swift; sourceTree = "<group>"; };
 		3F47B4B22D676B85001D03F2 /* Meat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meat.swift; sourceTree = "<group>"; };
 		3F47B4B42D676B9F001D03F2 /* CookingOil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingOil.swift; sourceTree = "<group>"; };
+		3FC071662D68425400D35843 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		3FC0716C2D68664F00D35843 /* appiconn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appiconn.png; sourceTree = "<group>"; };
+		3FC071742D687F8800D35843 /* Bannertoptest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bannertoptest.swift; sourceTree = "<group>"; };
 		3FCC1CB52D672D2D00D9CDAF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		AFA620482D311F350018E268 /* FoodDeliveryMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDeliveryMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA6204B2D311F350018E268 /* FoodDeliveryMaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDeliveryMaxApp.swift; sourceTree = "<group>"; };
@@ -207,6 +213,7 @@
 			children = (
 				3E7D7E1B2D53942B003658CB /* HomeView.swift */,
 				3EDC68BF2D54EB5C00D218FA /* ProductItemView.swift */,
+				3FC0716C2D68664F00D35843 /* appiconn.png */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -241,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				3E951C652D56476B006A6942 /* CategoryButton.swift */,
+				3FC071662D68425400D35843 /* FilterView.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -382,6 +390,7 @@
 				3F25CF2E2D5CBAF400D3C4C1 /* AccountOption.swift */,
 				3FCC1CB52D672D2D00D9CDAF /* Product.swift */,
 				3F47B4A32D6745CB001D03F2 /* Favorites.swift */,
+				3FC071742D687F8800D35843 /* Bannertoptest.swift */,
 			);
 			path = UICommon;
 			sourceTree = "<group>";
@@ -502,6 +511,7 @@
 				AFA6207C2D31242E0018E268 /* Gilroy-Regular.ttf in Resources */,
 				AFA6207D2D31242E0018E268 /* Gilroy-SemiBold.ttf in Resources */,
 				AFA620762D3121480018E268 /* LaunchScreen.storyboard in Resources */,
+				3FC0716D2D68664F00D35843 /* appiconn.png in Resources */,
 				AFA620532D311F370018E268 /* Preview Assets.xcassets in Resources */,
 				AFA620502D311F370018E268 /* Assets.xcassets in Resources */,
 				AFA6207B2D31242E0018E268 /* Gilroy-Bold.ttf in Resources */,
@@ -535,12 +545,14 @@
 				3E951C5E2D564481006A6942 /* FavouriteView.swift in Sources */,
 				3F47B4B12D676B74001D03F2 /* Bakery.swift in Sources */,
 				3F25CF2F2D5CBAF400D3C4C1 /* AccountOption.swift in Sources */,
+				3FC071672D68425400D35843 /* FilterView.swift in Sources */,
 				3E431B792D43AE18002829F8 /* Globs.swift in Sources */,
 				3F47B4AF2D676B66001D03F2 /* Beverages.swift in Sources */,
 				3E951C602D564499006A6942 /* ExploreView.swift in Sources */,
 				3E7D7E1C2D53942B003658CB /* HomeView.swift in Sources */,
 				3E951C582D5643D3006A6942 /* MainTabView.swift in Sources */,
 				3E431B922D43B05E002829F8 /* UIKitExtension.swift in Sources */,
+				3FC071752D687F8800D35843 /* Bannertoptest.swift in Sources */,
 				3F47B4B32D676B85001D03F2 /* Meat.swift in Sources */,
 				3E392E862D3FCF3A0000EFA2 /* LogInView.swift in Sources */,
 				3E951C662D56476B006A6942 /* CategoryButton.swift in Sources */,

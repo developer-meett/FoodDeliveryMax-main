@@ -11,13 +11,14 @@ struct ProductItemView: View {
         NavigationLink(destination: ProductDetailView(product: product)) {
             ZStack(alignment: .topTrailing) {
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black.opacity(0.2), lineWidth: 0.8)
-                    .frame(width: 165, height: 220)
+                    .stroke(Color.black.opacity(0.2), lineWidth: 1.2)
+                    .frame(width: 160, height: 220)
                     .overlay(
                         VStack(alignment: .leading) {
                             Image(product.image)
                                 .resizable()
-                                .frame(width: 110, height: 90)
+                                .scaledToFit()
+                                .frame(width: 110, height: 100)
                                 .padding(.bottom, 15)
 
                             Text(product.name)
@@ -44,7 +45,8 @@ struct ProductItemView: View {
                                 .background(Color.primaryApp)
                                 .cornerRadius(10)
                                 .padding(.top)
-                                .padding(.leading, 45)
+                                .padding(.leading,40)
+                               
                                 
                             }
                         }
@@ -66,7 +68,7 @@ struct ProductItemView: View {
                         .padding(8)
                 }
             }
-            .padding()
+            
         }
         .buttonStyle(PlainButtonStyle()) // Remove default styling of NavigationLink
     }
@@ -74,8 +76,8 @@ struct ProductItemView: View {
 
 struct ProductItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductItemView(product: Product(id: UUID(), name: "Banana", image: "banana", price: "$29.99", description: "7 pcs", pdescription: "banana is good fruit"), favoritesViewModel: FavoritesViewModel.shared)
+        ProductItemView(product: Product(id: UUID(), name: "Banana", image: "pepsi_can", price: "$29.99", description: "7 pcs", pdescription: "banana is good fruit"), favoritesViewModel: FavoritesViewModel.shared)
             .previewLayout(.sizeThatFits)
-            .padding()
+          
     }
 }

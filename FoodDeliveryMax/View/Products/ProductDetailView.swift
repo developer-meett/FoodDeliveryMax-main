@@ -4,6 +4,7 @@ import SwiftUI
 
 struct ProductDetailView: View {
     @State private var quantity: Int = 1
+  
     var product: Product
 
     var body: some View {
