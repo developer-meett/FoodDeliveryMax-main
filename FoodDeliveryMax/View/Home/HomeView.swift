@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var selectedCity: String = "Vadodara"
+    @State private var selectedCity: String = "Ahmedabad"
     @StateObject var favoritesViewModel = FavoritesViewModel.shared
     
  
@@ -32,16 +32,18 @@ struct HomeView: View {
                                 .foregroundColor(.primaryText)
                         }
                     }
-                    .frame(width: 120)
+                    .frame(width: 140)
                     .accentColor(.primaryText)
                     Spacer()
+                    NavigationLink(destination: AccountView()) {
+                        Image("profile")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .scaledToFit()
+                            .clipShape(.circle)
+                            .padding(.trailing)
+                    }
                     
-                    Image("profile")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .scaledToFit()
-                        .clipShape(.circle)
-                        .padding(.trailing)
                 }
                 
                 SearchTextField(searchText: .constant(""), placeholder: "Search Store")

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CookingOil: View {
     var favoritesViewModel: FavoritesViewModel
-    
+    @State private var showFilterView = false 
     var body: some View {
         NavigationView {
             VStack {
@@ -107,6 +107,29 @@ struct CookingOil: View {
                 }
             }
             .navigationTitle("") // Set an empty title to hide the default title
+        }
+        if showFilterView {
+            Color.black.opacity(0.5)
+                .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    withAnimation {
+                        showFilterView = false
+                    }
+                }
+            
+            FilterView(onClose: {
+                withAnimation {
+                    showFilterView = false
+                }
+            })
+            .transition(.move(edge: .bottom)) // Animate from the bottom
+            .animation(.easeInOut, value: showFilterView)
+            .frame(maxWidth: .infinity)
+            .background(Color.white)
+            .cornerRadius(20)
+            .shadow(radius: 10)
+            .padding(.bottom, 20)
+            .offset(y: showFilterView ? 0 : UIScreen.main.bounds.height)
         }
     }
 }

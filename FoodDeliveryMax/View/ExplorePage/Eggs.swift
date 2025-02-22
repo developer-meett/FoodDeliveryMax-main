@@ -4,6 +4,7 @@ struct Eggs: View {
     var favoritesViewModel: FavoritesViewModel
     @State private var showFilterView = false
     
+    
     var body: some View {
         ZStack {
             NavigationView {
@@ -58,15 +59,27 @@ struct Eggs: View {
             
             // Animated Filter View
             if showFilterView {
-                FilterView()
-                    .frame(height: 700)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .shadow(radius: 5)
-                    .offset(y: showFilterView ? 0 : UIScreen.main.bounds.height)
-                    .animation(.spring(), value: showFilterView)
-                    .transition(.move(edge: .bottom))
-                    .zIndex(1) // Bring to front
+                Color.black.opacity(0.5)
+                    .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        withAnimation {
+                            showFilterView = false
+                        }
+                    }
+                
+                FilterView(onClose: {
+                    withAnimation {
+                        showFilterView = false
+                    }
+                })
+                .transition(.move(edge: .bottom)) // Animate from the bottom
+                .animation(.easeInOut, value: showFilterView)
+                .frame(maxWidth: .infinity)
+                .background(Color.white)
+                .cornerRadius(20)
+                .shadow(radius: 10)
+                .padding(.bottom, 20)
+                .offset(y: showFilterView ? 0 : UIScreen.main.bounds.height)
             }
         }
     }

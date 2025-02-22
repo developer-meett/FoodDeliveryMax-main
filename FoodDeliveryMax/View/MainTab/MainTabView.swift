@@ -38,9 +38,7 @@ struct MainTabView: View {
                     homeVM.selectTab = 3
                 }
                 
-                TabButton(title: "Account", icon: "person", isSelect: homeVM.selectTab == 4) {
-                    homeVM.selectTab = 4
-                }
+                
             }
             .padding(.top, 10)
             .padding(.bottom,30)

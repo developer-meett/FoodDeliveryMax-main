@@ -1,14 +1,29 @@
 import SwiftUI
 
 struct FilterView: View {
+    @Environment(\.presentationMode) var presentationMode
     @State private var selectedCategories: Set<String> = []
     @State private var selectedBrands: Set<String> = []
     
     let categories = ["Eggs", "Noodles & Pasta", "Chips & Crisps", "Fast Food"]
     let brands = ["Individual Collection", "Cocola", "Ifad", "Kazi Farmas"]
     
+    var onClose: (() -> Void)? // Closure to handle the close action
+    
     var body: some View {
         VStack(alignment: .leading) {
+            HStack {
+                Button(action: {
+                    onClose?() // Call the close action
+                }) {
+                    Image(systemName: "xmark") // Use a system icon for the close button
+                        .font(.title)
+                        .foregroundColor(.black)
+                }
+                Spacer()
+            }
+            .padding()
+
             Text("Filters")
                 .font(.customfont(.bold, fontSize: 20))
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -24,7 +39,10 @@ struct FilterView: View {
                 .padding()
             }
             
-            Button(action: {}) {
+            Button(action: {
+                // Handle apply filter action here
+                presentationMode.wrappedValue.dismiss() // Dismiss the filter view
+            }) {
                 Text("Apply Filter")
                     .font(.customfont(.bold, fontSize: 20))
                     .frame(maxWidth: .infinity)
@@ -33,51 +51,17 @@ struct FilterView: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
                     .padding()
+                    .padding(.bottom,40)
             }
         }
-        .background(Color.gray.opacity(0.1))
+        .background(Color.primaryApp.opacity(0.1))
         .cornerRadius(20)
         .ignoresSafeArea(.all, edges: .bottom)
     }
 }
 
-struct FilterSection: View {
-    let title: String
-    let options: [String]
-    @Binding var selection: Set<String>
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .font(.headline)
-                .bold()
-            
-            ForEach(options, id: \..self) { option in
-                HStack {
-                    Image(selection.contains(option) ? "checkbox_check" : "checkbox")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    
-                    Text(option)
-                        .foregroundColor(.primary)
-                    
-                    Spacer()
-                }
-                .padding(.vertical, 5)
-                .onTapGesture {
-                    if selection.contains(option) {
-                        selection.remove(option)
-                    } else {
-                        selection.insert(option)
-                    }
-                }
-            }
-        }
-    }
-}
-
 struct FilterView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterView()
+        FilterView(onClose: {})
     }
 }
