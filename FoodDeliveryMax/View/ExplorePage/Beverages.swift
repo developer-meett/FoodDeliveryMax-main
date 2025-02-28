@@ -2,7 +2,8 @@ import SwiftUI
 
 struct Beverages: View {
     var favoritesViewModel: FavoritesViewModel
-    @State private var showFilterView = false 
+    var cartViewModel: CartViewModel
+    @State private var showFilterView = false
     var body: some View {
         NavigationView {
             VStack {
@@ -35,7 +36,7 @@ struct Beverages: View {
                                 price: "$1.99",
                                 description: "500 ml",
                                 pdescription: "A refreshing sugar-free cola with a crisp taste."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                           
                             
                             ProductItemView(product: Product(
@@ -45,7 +46,7 @@ struct Beverages: View {
                                 price: "$3.49",
                                 description: "1 liter",
                                 pdescription: "A mix of apple and grape juice with a sweet, fruity flavor."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                   
                         }.padding()
                         
@@ -58,7 +59,7 @@ struct Beverages: View {
                                 price: "$1.49",
                                 description: "330 ml",
                                 pdescription: "A classic carbonated soft drink with a bold flavor."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                        
                             
                             ProductItemView(product: Product(
@@ -68,7 +69,7 @@ struct Beverages: View {
                                 price: "$2.99",
                                 description: "1 liter",
                                 pdescription: "Freshly squeezed orange juice, full of vitamin C."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                          
                         }.padding()
                             .padding(.top,-10)
@@ -82,7 +83,7 @@ struct Beverages: View {
                                 price: "$1.99",
                                 description: "500 ml",
                                 pdescription: "A refreshing sugar-free cola with a crisp taste."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                           
                             
                             ProductItemView(product: Product(
@@ -92,7 +93,7 @@ struct Beverages: View {
                                 price: "$1.49",
                                 description: "330 ml",
                                 pdescription: "A classic cola with a refreshing, sweet taste."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                         
                         }.padding()
                             .padding(.top,-10)
@@ -128,5 +129,5 @@ struct Beverages: View {
 }
 
 #Preview {
-    Beverages(favoritesViewModel: FavoritesViewModel.shared)
+    Beverages(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
 }

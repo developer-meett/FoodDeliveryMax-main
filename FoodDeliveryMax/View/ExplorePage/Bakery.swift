@@ -9,7 +9,8 @@ import SwiftUI
 
 struct Bakery: View {
     var favoritesViewModel: FavoritesViewModel
-    @State private var showFilterView = false 
+    var cartViewModel: CartViewModel
+    @State private var showFilterView = false
     var body: some View {
         NavigationView {
             VStack {
@@ -42,7 +43,7 @@ struct Bakery: View {
                                 price: "$5.99",
                                 description: "1 kg",
                                 pdescription: "Rusks are a crunchy, twice-baked bread treat."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                           
                             
                             ProductItemView(product: Product(
@@ -52,7 +53,7 @@ struct Bakery: View {
                                 price: "$2.69",
                                 description: "1 kg",
                                 pdescription: "Burger buns are soft, fluffy, and perfect for sandwiches."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                   
                         }.padding()
                         
@@ -65,7 +66,7 @@ struct Bakery: View {
                                 price: "$5.99",
                                 description: "1 kg",
                                 pdescription: "Jalapeno bagels are a spicy twist on a classic breakfast treat."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                        
                             
                             ProductItemView(product: Product(
@@ -75,7 +76,7 @@ struct Bakery: View {
                                 price: "$2.69",
                                 description: "1 kg",
                                 pdescription: "Egg noodles are a versatile, soft pasta perfect for stir-fries."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                          
                         }.padding()
                             .padding(.top,-10)
@@ -89,7 +90,7 @@ struct Bakery: View {
                                 price: "$5.99",
                                 description: "1 kg",
                                 pdescription: "egg pasta are perfect for making rich, flavorful broths."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                           
                             
                             ProductItemView(product: Product(
@@ -99,7 +100,7 @@ struct Bakery: View {
                                 price: "$2.69",
                                 description: "1 kg",
                                 pdescription: "Rusks are crunchy and great as a snack or with tea."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                         
                         }.padding()
                             .padding(.top,-10)
@@ -136,5 +137,5 @@ struct Bakery: View {
 
 
 #Preview {
-    Bakery(favoritesViewModel: FavoritesViewModel.shared)
+    Bakery(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
 }

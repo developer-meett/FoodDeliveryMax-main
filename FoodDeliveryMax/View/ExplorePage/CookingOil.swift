@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CookingOil: View {
     var favoritesViewModel: FavoritesViewModel
-    @State private var showFilterView = false 
+    var cartViewModel: CartViewModel
+    @State private var showFilterView = false
     var body: some View {
         NavigationView {
             VStack {
@@ -42,7 +43,7 @@ struct CookingOil: View {
                                 price: "$5.99",
                                 description: "1 kg",
                                 pdescription: "Beef bones are rich in collagen and minerals."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                           
                             
                             ProductItemView(product: Product(
@@ -52,7 +53,7 @@ struct CookingOil: View {
                                 price: "$2.69",
                                 description: "1 kg",
                                 pdescription: "Broiler chicken is a good source of protein."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                   
                         }.padding()
                         
@@ -65,7 +66,7 @@ struct CookingOil: View {
                                 price: "$5.99",
                                 description: "1 kg",
                                 pdescription: "Beef bones are rich in collagen and minerals."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                        
                             
                             ProductItemView(product: Product(
@@ -75,7 +76,7 @@ struct CookingOil: View {
                                 price: "$2.69",
                                 description: "1 kg",
                                 pdescription: "Broiler chicken is a good source of protein."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                          
                         }.padding()
                             .padding(.top,-10)
@@ -89,7 +90,7 @@ struct CookingOil: View {
                                 price: "$5.99",
                                 description: "1 kg",
                                 pdescription: "Beef bones are rich in collagen and minerals."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                           
                             
                             ProductItemView(product: Product(
@@ -99,7 +100,7 @@ struct CookingOil: View {
                                 price: "$2.69",
                                 description: "1 kg",
                                 pdescription: "Broiler chicken is a good source of protein."
-                            ), favoritesViewModel: favoritesViewModel)
+                            ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                         
                         }.padding()
                             .padding(.top,-10)
@@ -136,5 +137,5 @@ struct CookingOil: View {
 
 
 #Preview {
-    CookingOil(favoritesViewModel: FavoritesViewModel.shared)
+    CookingOil(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
 }

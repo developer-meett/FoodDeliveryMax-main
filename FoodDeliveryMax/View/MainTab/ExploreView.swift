@@ -24,7 +24,7 @@ struct ExploreView: View {
                         backgroundColor: Color.green.opacity(0.1),
                         imageName: "frash_fruits",
                         text: "Fresh Fruits & Vegetables",
-                        destination: Fruits(favoritesViewModel: FavoritesViewModel.shared)
+                        destination: Fruits(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
                     )
                     .padding(.trailing)
                     
@@ -33,7 +33,7 @@ struct ExploreView: View {
                         backgroundColor: Color.orange.opacity(0.1),
                         imageName: "cooking_oil",
                         text: "Cooking Oil & Ghee",
-                        destination: CookingOil(favoritesViewModel: FavoritesViewModel.shared)
+                        destination: CookingOil(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
                     )
                 }
                 .padding(.bottom)
@@ -44,7 +44,7 @@ struct ExploreView: View {
                         backgroundColor: Color.red.opacity(0.1),
                         imageName: "meat_fish",
                         text: "Meat & Fish",
-                        destination: Meat(favoritesViewModel: FavoritesViewModel.shared)
+                        destination: Meat(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
                     )
                     .padding(.trailing)
                     
@@ -53,7 +53,7 @@ struct ExploreView: View {
                         backgroundColor: Color.purple.opacity(0.1),
                         imageName: "bakery_snacks",
                         text: "Bakery & Snacks",
-                        destination: Bakery(favoritesViewModel: FavoritesViewModel.shared)
+                        destination: Bakery(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
                     )
                 }
                 .padding(.bottom)
@@ -64,7 +64,7 @@ struct ExploreView: View {
                         backgroundColor: Color.yellow.opacity(0.1),
                         imageName: "dairy_eggs",
                         text: "Dairy & Eggs",
-                        destination: Eggs(favoritesViewModel: FavoritesViewModel.shared)
+                        destination: Eggs(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
                     )
                     .padding(.trailing)
                     
@@ -73,7 +73,7 @@ struct ExploreView: View {
                         backgroundColor: Color.blue.opacity(0.1),
                         imageName: "beverages",
                         text: "Beverages",
-                        destination: Beverages(favoritesViewModel: FavoritesViewModel.shared)
+                        destination: Beverages(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
                     )
                 }
                 .padding(.bottom)

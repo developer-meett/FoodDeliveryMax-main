@@ -3,7 +3,7 @@ import SwiftUI
 struct Eggs: View {
     var favoritesViewModel: FavoritesViewModel
     @State private var showFilterView = false
-    
+    var cartViewModel: CartViewModel
     
     var body: some View {
         ZStack {
@@ -39,7 +39,7 @@ struct Eggs: View {
                                     price: "$5.99",
                                     description: "1 kg",
                                     pdescription: "Beef bones are rich in collagen and minerals."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                                 
                                 ProductItemView(product: Product(
                                     id: UUID(),
@@ -48,7 +48,7 @@ struct Eggs: View {
                                     price: "$2.69",
                                     description: "1 kg",
                                     pdescription: "Broiler chicken is a good source of protein."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                             }
                             .padding()
                         }
@@ -86,5 +86,5 @@ struct Eggs: View {
 }
 
 #Preview {
-    Eggs(favoritesViewModel: FavoritesViewModel.shared)
+    Eggs(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
 }

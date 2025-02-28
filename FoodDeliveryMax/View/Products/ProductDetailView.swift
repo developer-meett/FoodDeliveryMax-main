@@ -1,12 +1,10 @@
 import SwiftUI
 
-import SwiftUI
-
 struct ProductDetailView: View {
     @State private var quantity: Int = 1
-  
+    @ObservedObject var cartViewModel = CartViewModel.shared // Use Singleton
     var product: Product
-
+   
     var body: some View {
         ScrollView {
             VStack {
@@ -25,12 +23,9 @@ struct ProductDetailView: View {
                         .padding()
                 }
 
-                VStack {
-                    HStack {
-                        Text(product.name)
-                            .font(.customfont(.bold, fontSize: 30))
-                        Spacer()
-                    }
+                VStack(alignment: .leading) {
+                    Text(product.name)
+                        .font(.customfont(.bold, fontSize: 30))
 
                     Text(product.description)
                         .font(.customfont(.semibold, fontSize: 17))
@@ -62,8 +57,7 @@ struct ProductDetailView: View {
                     }
                 }
                 .padding(.horizontal, 24)
-
-                // Product Details Section
+                
                 VStack {
                     Divider()
                     HStack {
@@ -103,31 +97,34 @@ struct ProductDetailView: View {
                 .padding(.horizontal, 24)
                 .padding(.vertical, 25)
 
-                Button(action: {}) {
-                    Text("Add To Basket")
-                        .font(.customfont(.bold, fontSize: 20))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.primaryApp)
-                        .cornerRadius(10)
-                }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 5)
-            }
-            .cornerRadius(20)
-            .padding(.horizontal, 20)
-            .padding(.bottom, 20)
-        }
-        .padding(.top, 50)
-        .ignoresSafeArea(.all)
-    }
-}
+                Button(action: {
+                    print("🛒 Button tapped for: \(product.name)")
+                                  cartViewModel.addToCart(product: product, quantity: quantity)
+                              }) {
+                                  Text("Add To Basket")
+                                      .font(.customfont(.bold, fontSize: 20))
+                                      .foregroundColor(.white)
+                                      .frame(maxWidth: .infinity)
+                                      .padding()
+                                      .background(Color.primaryApp)
+                                      .cornerRadius(10)
+                              }
+                              .padding(.horizontal, 20)
+                              .padding(.bottom, 5)
+                          }
+                          .cornerRadius(20)
+                          .padding(.horizontal, 20)
+                          .padding(.bottom, 20)
+                      }
+                      .padding(.top, 50)
+                      .ignoresSafeArea(.all)
+                  }
+              }
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             ProductDetailView(
-                product: Product(
+                cartViewModel: CartViewModel(), product: Product(
                     id: UUID(),
                     name: "Naturel Red Apple",
                     image: "apple_red", // Image name should be in your assets

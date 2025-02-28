@@ -3,7 +3,9 @@ import SwiftUI
 struct HomeView: View {
     @State private var selectedCity: String = "Ahmedabad"
     @StateObject var favoritesViewModel = FavoritesViewModel.shared
-    
+    @State private var selectedIndex = 0
+        let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
+    @StateObject var cartViewModel = CartViewModel.shared
  
     let cities = ["New Delhi", "Mumbai", "Bangalore", "Chennai", "Kolkata", "Hyderabad",
                   "Pune", "Ahmedabad", "Surat", "Jaipur", "Chandigarh", "Lucknow", "Indore",
@@ -51,129 +53,140 @@ struct HomeView: View {
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
-                               TabView {
-                                   Image("1")
-                                       .resizable()
-                                       .scaledToFit()
-                                       .frame(width: UIScreen.main.bounds.width * 0.9, height: 185)
-                                       .cornerRadius(10)
-                                       .shadow(radius: 5)
-
-                                   Image("2")
-                                       .resizable()
-                                       .scaledToFit()
-                                       .frame(width: UIScreen.main.bounds.width * 0.9, height: 185)
-                                       .cornerRadius(10)
-                                       .shadow(radius: 5)
-
-                                   Image("3")
-                                       .resizable()
-                                       .scaledToFit()
-                                       .frame(width: UIScreen.main.bounds.width * 0.9, height: 185)
-                                       .cornerRadius(10)
-                                       .shadow(radius: 5)
-                               }
-                               .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // Enables snap-scrolling
-                               .frame(height: 185)
-                               .padding(.horizontal, 20)
-                               .padding(.bottom,-30)
-                               .padding(.top,-30)// Adjust horizontal padding for better spacing
-                           }
-                    
-                    HStack {
-                        Text("Exclusive Offer")
-                            .font(.customfont(.semibold, fontSize: 19))
-                            .foregroundColor(.primaryText)
-                            .padding(.leading)
-                        Spacer()
+                        TabView(selection: $selectedIndex) {
+                            Image("1")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: UIScreen.main.bounds.width * 0.9, height: 185)
+                                .cornerRadius(10)
+                                .shadow(radius: 5)
+                                .tag(0)
+                            
+                            Image("2")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: UIScreen.main.bounds.width * 0.9, height: 185)
+                                .cornerRadius(10)
+                                .shadow(radius: 5)
+                                .tag(1)
+                            
+                            Image("3")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: UIScreen.main.bounds.width * 0.9, height: 185)
+                                .cornerRadius(10)
+                                .shadow(radius: 5)
+                                .tag(2)
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                        .frame(height: 185)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, -30)
+                        .padding(.top, -30)
+                        .onReceive(timer) { _ in
+                            withAnimation(.easeInOut(duration: 1.5)) {
+                                selectedIndex = (selectedIndex + 1) % 3
+                                
+                            }
+                                
+                            
+                            
+                        }
                         
-                        Button(action: {}) {
-                            Text("See all")
-                                .padding()
-                                .foregroundColor(.primaryApp)
-                                .font(.customfont(.semibold, fontSize: 14))
+                        HStack {
+                            Text("Exclusive Offer")
+                                .font(.customfont(.semibold, fontSize: 19))
+                                .foregroundColor(.primaryText)
                                 .padding(.leading)
-                        }
-                    }
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 20){  // Adjust the spacing between items
-                            ProductItemView(product: Product(
-                                id: UUID(),
-                                name: "Organic Bananas",
-                                image: "banana",
-                                price: "$1.99",
-                                description: "7 pcs",
-                                pdescription: "Organic bananas are rich in potassium and vitamin C."
-                            ), favoritesViewModel: favoritesViewModel)
+                            Spacer()
                             
-                            ProductItemView(product: Product(
-                                id: UUID(),
-                                name: "Red Apple",
-                                image: "apple_red",
-                                price: "$2.99",
-                                description: "1 kg",
-                                pdescription: "Red apples are high in fiber and vitamin C."
-                            ), favoritesViewModel: favoritesViewModel)
-                            
-                            ProductItemView(product: Product(
-                                id: UUID(),
-                                name: "Organic Bananas",
-                                image: "banana",
-                                price: "$4.99",
-                                description: "7 pcs",
-                                pdescription: "Organic bananas are rich in potassium and vitamin C."
-                            ), favoritesViewModel: favoritesViewModel)
+                            Button(action: {}) {
+                                Text("See all")
+                                    .padding()
+                                    .foregroundColor(.primaryApp)
+                                    .font(.customfont(.semibold, fontSize: 14))
+                                    .padding(.leading)
+                            }
                         }
                         
-                    }.padding(.leading,20)
-                    
-                    HStack {
-                        Text("Best Selling")
-                            .font(.customfont(.semibold, fontSize: 19))
-                            .foregroundColor(.primaryText)
-                            .padding(.leading)
-                        Spacer()
-                        
-                        Button(action: {}) {
-                            Text("See all")
-                                .padding()
-                                .foregroundColor(.primaryApp)
-                                .font(.customfont(.semibold, fontSize: 14))
-                                .padding(.leading)
-                        }
-                    }
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 20){  // Adjust the spacing between items
-                            ProductItemView(product: Product(
-                                id: UUID(),
-                                name: "Bell Pepper Red",
-                                image: "bell_pepper_red",
-                                price: "$4.99",
-                                description: "1 kg",
-                                pdescription: "Red bell peppers are packed with vitamins A and C."
-                            ), favoritesViewModel: favoritesViewModel)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 20){  // Adjust the spacing between items
+                                ProductItemView(product: Product(
+                                    id: UUID(),
+                                    name: "Organic Bananas",
+                                    image: "banana",
+                                    price: "$1.99",
+                                    description: "7 pcs",
+                                    pdescription: "Organic bananas are rich in potassium and vitamin C."
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
+                                
+                                ProductItemView(product: Product(
+                                    id: UUID(),
+                                    name: "Red Apple",
+                                    image: "apple_red",
+                                    price: "$2.99",
+                                    description: "1 kg",
+                                    pdescription: "Red apples are high in fiber and vitamin C."
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
+                                
+                                ProductItemView(product: Product(
+                                    id: UUID(),
+                                    name: "Organic Bananas",
+                                    image: "banana",
+                                    price: "$4.99",
+                                    description: "7 pcs",
+                                    pdescription: "Organic bananas are rich in potassium and vitamin C."
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
+                            }
                             
-                            ProductItemView(product: Product(
-                                id: UUID(),
-                                name: "Ginger",
-                                image: "ginger",
-                                price: "$3.99",
-                                description: "250 gm",
-                                pdescription: "Ginger is known for its anti-inflammatory properties."
-                            ), favoritesViewModel: favoritesViewModel)
-                            
-                            ProductItemView(product: Product(
-                                id: UUID(),
-                                name: "Bell Pepper Red",
-                                image: "bell_pepper_red",
-                                price: "$2.99",
-                                description: "1 kg",
-                                pdescription: "Red bell peppers are packed with vitamins A and C."
-                            ), favoritesViewModel: favoritesViewModel)
                         }.padding(.leading,20)
-                    }
+                        
+                        HStack {
+                            Text("Best Selling")
+                                .font(.customfont(.semibold, fontSize: 19))
+                                .foregroundColor(.primaryText)
+                                .padding(.leading)
+                            Spacer()
+                            
+                            Button(action: {}) {
+                                Text("See all")
+                                    .padding()
+                                    .foregroundColor(.primaryApp)
+                                    .font(.customfont(.semibold, fontSize: 14))
+                                    .padding(.leading)
+                            }
+                        }
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 20){  // Adjust the spacing between items
+                                ProductItemView(product: Product(
+                                    id: UUID(),
+                                    name: "Bell Pepper Red",
+                                    image: "bell_pepper_red",
+                                    price: "$4.99",
+                                    description: "1 kg",
+                                    pdescription: "Red bell peppers are packed with vitamins A and C."
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
+                                
+                                ProductItemView(product: Product(
+                                    id: UUID(),
+                                    name: "Ginger",
+                                    image: "ginger",
+                                    price: "$3.99",
+                                    description: "250 gm",
+                                    pdescription: "Ginger is known for its anti-inflammatory properties."
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
+                                
+                                ProductItemView(product: Product(
+                                    id: UUID(),
+                                    name: "Bell Pepper Red",
+                                    image: "bell_pepper_red",
+                                    price: "$2.99",
+                                    description: "1 kg",
+                                    pdescription: "Red bell peppers are packed with vitamins A and C."
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
+                            }.padding(.leading,20)
+                        }
                         
                         HStack {
                             Text("Groceries")
@@ -244,7 +257,7 @@ struct HomeView: View {
                                     price: "$5.99",
                                     description: "1 kg",
                                     pdescription: "Beef bones are rich in collagen and minerals."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                                 
                                 ProductItemView(product: Product(
                                     id: UUID(),
@@ -253,7 +266,7 @@ struct HomeView: View {
                                     price: "$2.69",
                                     description: "1 kg",
                                     pdescription: "Broiler chicken is a good source of protein."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                                 
                                 ProductItemView(product: Product(
                                     id: UUID(),
@@ -262,11 +275,11 @@ struct HomeView: View {
                                     price: "$5.99",
                                     description: "1 kg",
                                     pdescription: "Beef bones are rich in collagen and minerals."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                             }.padding(.leading,20)
-                           
                             
-                           
+                            
+                            
                         }
                         
                     }
@@ -276,13 +289,14 @@ struct HomeView: View {
                 
             }
             
-        }
+        }}
+    
         
     }
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            HomeView()
+            HomeView(cartViewModel: CartViewModel())
         }
     }
 }

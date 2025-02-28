@@ -7,11 +7,11 @@ struct MainTabView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView(selection: $homeVM.selectTab) {
-                HomeView()
+                HomeView(cartViewModel: CartViewModel.shared)
                     .tag(0)
                 ExploreView()
                     .tag(1)
-                MyCartView()
+                MyCartView(cartViewModel: CartViewModel.shared)
                     .tag(2)
                 FavoritesView(favoritesViewModel: FavoritesViewModel.shared)
                     .tag(3)

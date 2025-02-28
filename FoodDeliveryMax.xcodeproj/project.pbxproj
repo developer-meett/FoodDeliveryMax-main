@@ -40,6 +40,8 @@
 		3F25CF2F2D5CBAF400D3C4C1 /* AccountOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CF2E2D5CBAF400D3C4C1 /* AccountOption.swift */; };
 		3F25CF312D5CC79700D3C4C1 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CF302D5CC79700D3C4C1 /* OrdersView.swift */; };
 		3F2D98782D69D9B8006598B5 /* FilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D98772D69D9B8006598B5 /* FilterSection.swift */; };
+		3F36ECC82D6C7EA90098E241 /* CartViewMOdel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36ECC72D6C7EA10098E241 /* CartViewMOdel.swift */; };
+		3F36ECCA2D6C7EF90098E241 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36ECC92D6C7EE80098E241 /* Cart.swift */; };
 		3F47B4A42D6745CB001D03F2 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4A32D6745CB001D03F2 /* Favorites.swift */; };
 		3F47B4A82D674610001D03F2 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4A72D674610001D03F2 /* FavoritesViewModel.swift */; };
 		3F47B4AB2D676B32001D03F2 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B4AA2D676B32001D03F2 /* Fruits.swift */; };
@@ -117,6 +119,8 @@
 		3F25CF2E2D5CBAF400D3C4C1 /* AccountOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOption.swift; sourceTree = "<group>"; };
 		3F25CF302D5CC79700D3C4C1 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
 		3F2D98772D69D9B8006598B5 /* FilterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSection.swift; sourceTree = "<group>"; };
+		3F36ECC72D6C7EA10098E241 /* CartViewMOdel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewMOdel.swift; sourceTree = "<group>"; };
+		3F36ECC92D6C7EE80098E241 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		3F47B4A32D6745CB001D03F2 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		3F47B4A72D674610001D03F2 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		3F47B4AA2D676B32001D03F2 /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 		3E431B692D43AD3C002829F8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3F36ECC72D6C7EA10098E241 /* CartViewMOdel.swift */,
 				3E431B6A2D43AD63002829F8 /* HomeViewModel.swift */,
 				3E431B8C2D43AEC3002829F8 /* ProductDetailViewModel.swift */,
 				3E431B6B2D43AD63002829F8 /* MainViewModel.swift */,
@@ -378,6 +383,7 @@
 		AFA620872D312C100018E268 /* UICommon */ = {
 			isa = PBXGroup;
 			children = (
+				3F36ECC92D6C7EE80098E241 /* Cart.swift */,
 				AFA620882D312C260018E268 /* UIExtension.swift */,
 				3E431B742D43AE18002829F8 /* BackButton.swift */,
 				3E431B722D43AE18002829F8 /* Globs.swift */,
@@ -568,6 +574,7 @@
 				AFA6208B2D313E4D0018E268 /* SignInView.swift in Sources */,
 				3E431B8B2D43AE91002829F8 /* UserModel.swift in Sources */,
 				3F25CF312D5CC79700D3C4C1 /* OrdersView.swift in Sources */,
+				3F36ECCA2D6C7EF90098E241 /* Cart.swift in Sources */,
 				3F47B4AD2D676B40001D03F2 /* Eggs.swift in Sources */,
 				3F47B4AB2D676B32001D03F2 /* Fruits.swift in Sources */,
 				3E392E882D3FCF4A0000EFA2 /* SignUpView.swift in Sources */,
@@ -579,6 +586,7 @@
 				3EDC68C02D54EB5C00D218FA /* ProductItemView.swift in Sources */,
 				3E431B7D2D43AE18002829F8 /* TabButton.swift in Sources */,
 				3E431B7C2D43AE18002829F8 /* SectionTitleAll.swift in Sources */,
+				3F36ECC82D6C7EA90098E241 /* CartViewMOdel.swift in Sources */,
 				3F028B342D5B62620042DBAB /* QuantityView.swift in Sources */,
 				3E431B6F2D43AD89002829F8 /* ServiceCall.swift in Sources */,
 				3E431B872D43AE91002829F8 /* NutritionModel.swift in Sources */,

@@ -3,7 +3,7 @@ import SwiftUI
 struct Fruits: View {
     var favoritesViewModel: FavoritesViewModel
     @State private var showFilterView = false // State variable to control the filter view
-    
+    var cartViewModel: CartViewModel
     var body: some View {
         ZStack {
             NavigationStack {
@@ -38,7 +38,7 @@ struct Fruits: View {
                                     price: "$3.99",
                                     description: "1 kg",
                                     pdescription: "Fresh and juicy apples, rich in fiber and vitamin C."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                                 
                                 ProductItemView(product: Product(
                                     id: UUID(),
@@ -47,7 +47,7 @@ struct Fruits: View {
                                     price: "$2.49",
                                     description: "1 kg",
                                     pdescription: "Ripe bananas packed with potassium and natural sweetness."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                             }
                             .padding()
                             
@@ -60,7 +60,7 @@ struct Fruits: View {
                                     price: "$4.49",
                                     description: "250 gm",
                                     pdescription: "Fresh ginger, known for its anti-inflammatory properties."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                                 
                                 ProductItemView(product: Product(
                                     id: UUID(),
@@ -69,7 +69,7 @@ struct Fruits: View {
                                     price: "$3.79",
                                     description: "1 kg",
                                     pdescription: "Sweet red bell peppers full of vitamins A and C."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                             }
                             .padding()
                             .padding(.top, -10)
@@ -83,7 +83,7 @@ struct Fruits: View {
                                     price: "$3.99",
                                     description: "1 kg",
                                     pdescription: "Fresh and juicy apples, rich in fiber and vitamin C."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                                 
                                 ProductItemView(product: Product(
                                     id: UUID(),
@@ -92,7 +92,7 @@ struct Fruits: View {
                                     price: "$2.49",
                                     description: "1 kg",
                                     pdescription: "Ripe bananas packed with potassium and natural sweetness."
-                                ), favoritesViewModel: favoritesViewModel)
+                                ), favoritesViewModel: favoritesViewModel, cartViewModel: cartViewModel)
                             }
                             .padding()
                             .padding(.top, -10)
@@ -134,5 +134,5 @@ struct Fruits: View {
 }
 
 #Preview {
-    Fruits(favoritesViewModel: FavoritesViewModel.shared)
+    Fruits(favoritesViewModel: FavoritesViewModel.shared, cartViewModel: CartViewModel())
 }
