@@ -31,7 +31,7 @@ struct TabButton: View {
 struct TabButton_Previews: PreviewProvider {
     static var previews: some View {
         HStack {
-            TabButton(title: "Shop", icon: "storefront", isSelect: true) {
+            TabButton(title: "Shop", icon: "storefront", isSelect: false) {
                 print("Shop tapped")
             }
         }

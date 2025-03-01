@@ -52,7 +52,7 @@ struct MyCartView: View {
                                 }
                             }
 
-                            // ✅ Fix: Use Correct Price Conversion Function
+                            
                             let itemTotal = cartViewModel.getItemTotalPrice(for: item)
 
                             Text(itemTotal)

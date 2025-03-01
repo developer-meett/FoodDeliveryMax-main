@@ -9,7 +9,7 @@ struct ProductItemView: View {
     var body: some View {
         ZStack(alignment: .topTrailing) {
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.black.opacity(0.2), lineWidth: 1.2)
+                .stroke(Color.black.opacity(0.2), lineWidth: 0.6)
                 .frame(width: 160, height: 220)
                 .overlay(
                     VStack(alignment: .leading) {
@@ -38,10 +38,10 @@ struct ProductItemView: View {
                                 .foregroundColor(.primaryText)
 
                             Button(action: {
-                                print("Adding to cart: \(product.name)")  // Debugging
+                                print("Adding to cart: \(product.name)")  
                                 cartViewModel.addToCart(product: product)
                             }) {
-                                Image("add") // Replace with your "add to cart" image or icon
+                                Image("add")
                                     .resizable()
                                     .frame(width: 20, height: 20)
                                     .padding(7)
