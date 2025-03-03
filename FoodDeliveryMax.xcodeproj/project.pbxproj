@@ -54,6 +54,7 @@
 		3F5B3F3A2D731398003947B8 /* OrderTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B3F392D731398003947B8 /* OrderTracking.swift */; };
 		3F5B3F3D2D7315AA003947B8 /* MyCarttt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B3F3C2D7315AA003947B8 /* MyCarttt.swift */; };
 		3F5B3F3F2D7317B7003947B8 /* Mycart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B3F3E2D7317B7003947B8 /* Mycart.swift */; };
+		3F6000472D75C1F0008FD395 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F6000462D75C1F0008FD395 /* GoogleService-Info (1).plist */; };
 		3FC071672D68425400D35843 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC071662D68425400D35843 /* FilterView.swift */; };
 		3FC071752D687F8800D35843 /* Bannertoptest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC071742D687F8800D35843 /* Bannertoptest.swift */; };
 		3FCC1CB62D672D2D00D9CDAF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC1CB52D672D2D00D9CDAF /* Product.swift */; };
@@ -136,6 +137,7 @@
 		3F5B3F392D731398003947B8 /* OrderTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTracking.swift; sourceTree = "<group>"; };
 		3F5B3F3C2D7315AA003947B8 /* MyCarttt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarttt.swift; sourceTree = "<group>"; };
 		3F5B3F3E2D7317B7003947B8 /* Mycart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mycart.swift; sourceTree = "<group>"; };
+		3F6000462D75C1F0008FD395 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		3FC071662D68425400D35843 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		3FC071742D687F8800D35843 /* Bannertoptest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bannertoptest.swift; sourceTree = "<group>"; };
 		3FCC1CB52D672D2D00D9CDAF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				AFA6207E2D3124460018E268 /* Info.plist */,
 				AFA620772D3123FA0018E268 /* Font */,
 				AFA6204B2D311F350018E268 /* FoodDeliveryMaxApp.swift */,
+				3F6000462D75C1F0008FD395 /* GoogleService-Info (1).plist */,
 				AFA6204F2D311F370018E268 /* Assets.xcassets */,
 				AFA620512D311F370018E268 /* Preview Content */,
 				AFA620752D3121480018E268 /* LaunchScreen.storyboard */,
@@ -548,6 +551,7 @@
 				AFA620532D311F370018E268 /* Preview Assets.xcassets in Resources */,
 				AFA620502D311F370018E268 /* Assets.xcassets in Resources */,
 				AFA6207B2D31242E0018E268 /* Gilroy-Bold.ttf in Resources */,
+				3F6000472D75C1F0008FD395 /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,7 +806,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.FoodDeliveryMax;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nectar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -835,7 +839,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.FoodDeliveryMax;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nectar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

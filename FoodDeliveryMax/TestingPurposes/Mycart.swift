@@ -2,10 +2,10 @@ import SwiftUI
 
 struct Mycart: View {
     var product: Product
+    @ObservedObject var cartViewModel = CartViewModel.shared
     @State private var quantity: Int = 1  // State variable to track quantity
 
     var body: some View {
-       
         HStack {
             Image(product.image)
                 .resizable()
@@ -60,7 +60,7 @@ struct Mycart: View {
                         )
 
                     // Price
-                    Text(product.price*Double(quantity)).compositingGroup())
+                    Text(product.price)
                         .font(.customfont(.semibold, fontSize: 16))
                         .padding(.leading, 70)
                         .padding(.bottom, -6)
@@ -71,7 +71,7 @@ struct Mycart: View {
 
             // Close button (❌)
             Button(action: {
-                // Functionality not added as per your request
+                cartViewModel.removeFromCart(product: product)
             }) {
                 Image(systemName: "xmark.circle.fill")
                     .resizable()
@@ -82,8 +82,4 @@ struct Mycart: View {
         }
         Divider()
     }
-}
-
-#Preview {
-    Mycart(product: Product(id: UUID(), name: "Bell Pepper", image: "bell_pepper_red", price: "$7.8", description: "7 pcs, price", pdescription: "jsgfkjsfksd"))
 }
